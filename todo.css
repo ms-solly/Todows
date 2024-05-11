@@ -1,17 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Croissant+One&family=Oswald:wght@700&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Gochi+Hand");
 
-
-
 body {
-    /* background-color: #000000; */
-    /* font-family: 'Croissant One', cursive; */
     margin: 0;
     padding: 0;
-    font-family: "Gochi Hand", cursive;
-
-
-
+    font-family: "Gochi Hand",;
 }
 
 .container {
@@ -21,39 +14,42 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    text-align: center;
     position: relative;
-    /* font-family: "Gochi Hand", cursive; */
-    
-   
 }
 
 .header {
     background-color: #0b7899;
     color: #fff;
     padding: 10px 0;
-    border-radius: 8px 8px 0 0;
+    /* border-radius: 8px 8px 0 0; */
     font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: black solid 6px;
 }
 
 .title {
     margin: 0;
     font-weight: bold;
+    text-align: center;
+    
 }
 
-.form {
+.content {
     display: flex;
-    margin-top: 20px;
+    justify-content: space-between;
 }
 
-input[type="text"] {
+.todo-section {
     flex: 1;
-    padding: 10px;
-    border: none;
-    border-bottom: 2px solid #0b7899;
-    border-radius: 0;
-    outline: none;
-    font-size: 16px;
+    padding-right: 20px;
+}
+
+.todo-section .form {
+    margin-bottom: 20px;
+}
+
+.todo-section input[type="text"] {
+    width: calc(100% - 50px);
 }
 
 button#add {
@@ -61,9 +57,9 @@ button#add {
     color: #fff;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
+    width: 20;
+    height: 20px;
+    font-size: 14px;
     cursor: pointer;
 }
 
@@ -83,13 +79,58 @@ li {
     align-items: center;
     font-size: 18px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 0.5s;
-    font-family: "Gochi Hand", cursive;
-
 }
 
-li .delete {
-    background-color: #0b7899;
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #0b7899;
+    border-radius: 0;
+    outline: none;
+    font-size: 16px;
+    transition: padding 0.3s; /* Smooth transition */
+}
+
+input[type="text"]:focus {
+    padding-bottom: 20px; /* Increased padding when focused */
+}
+
+
+.done-section {
+    flex: 1;
+}
+
+.done-section.hidden {
+    display: none;
+}
+
+.done-section h2 {
+    font-size: 24px;
+    color: #0b7899;
+}
+
+.done-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.done-list li {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete {
+    background-color: #877d7d;
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -99,15 +140,15 @@ li .delete {
     cursor: pointer;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.delete:hover {
+    background-color: #d44;
 }
 
+.done{
+    background: gray;
+}
 
+.done:hover{
+    color: gray;
+    background: skyblue;
+}
